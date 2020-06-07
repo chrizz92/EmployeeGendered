@@ -8,7 +8,7 @@ namespace EmployeeGendered
     /// </summary>
     public class DepartmentalEmployee : Employee
     {
-        private double _monthlyWage;
+        private double _monthlyWage;//Monatslohn
 
         /// <summary>
         /// Konstruktor des Abteilungsmitarbeiter
@@ -31,7 +31,7 @@ namespace EmployeeGendered
         public override string GetInfo()
         {
             string genderedJob = " und bin Angestellte";
-            if (base.Gender == 0)
+            if (base.Gender == 0)//Mann?
             {
                 genderedJob = " und bin Angestellter";
             }

@@ -3,7 +3,7 @@
  *--------------------------------------------------------------
  *              Name: Christian Schadler
  *--------------------------------------------------------------
- * Description:
+ *
  *
  *--------------------------------------------------------------
 */
@@ -36,7 +36,7 @@ namespace EmployeeGendered
         /// <param name="department"></param>
         public Employee(string name, Gender gender, string department)
         {
-            if (name[0] >= 'A' && name[0] <= 'Z' && name.Length >= 2)
+            if (Char.IsUpper(name[0]) && name.Length >= 2)//Beginnt der Name mit einem Grossbuchstaben und hat mindestens 2 Zeichen?
             {
                 _name = name;
             }
@@ -55,7 +55,7 @@ namespace EmployeeGendered
         /// <returns></returns>
         public virtual string GetInfo()
         {
-            return $"Ich heiße {_name} und arbeite in der Abteilung{_department}";
+            return $"Ich heiße {_name} und arbeite in der Abteilung {_department}";
         }
 
         /// <summary>

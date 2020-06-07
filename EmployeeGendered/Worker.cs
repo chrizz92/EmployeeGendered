@@ -45,7 +45,7 @@ namespace EmployeeGendered
         public override string GetInfo()
         {
             string genderedJob = " und bin Arbeiterin";
-            if (base.Gender == 0)
+            if (base.Gender == 0) //Mann?
             {
                 genderedJob = " und bin Arbeiter";
             }
@@ -61,7 +61,14 @@ namespace EmployeeGendered
             }
             set
             {
-                _hourlyWage = value;
+                if (value > 0)//nur positiver Stundenlohn
+                {
+                    _hourlyWage = value;
+                }
+                else
+                {
+                    _hourlyWage = 0;
+                }
             }
         }
 
@@ -77,7 +84,14 @@ namespace EmployeeGendered
             }
             set
             {
-                _hours = value;
+                if (value > 0 && value <= 16)//nur positive und maximal 16 Stunden
+                {
+                    _hours = value;
+                }
+                else
+                {
+                    _hours = 0;
+                }
             }
         }
 
@@ -87,7 +101,7 @@ namespace EmployeeGendered
         /// </summary>
         public override double GetSalary()
         {
-            throw new NotImplementedException();
+            return _hours * _hourlyWage;//Produkt aus Stunden und Stundenlohn
         }
     }
 }

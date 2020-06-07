@@ -23,7 +23,7 @@ namespace EmployeeGendered
 
         /// <summary>
         /// Abteilungsleiter schreibt Text komplett neu (100% Änderung)
-        /// Verwendet den Text der Basisklasse (Abteilungsmitarbeiter) nicht
+        /// Verwendet nicht den Text der Basisklasse (Abteilungsmitarbeiter)
         /// </summary>
         /// <returns>Info des Abteilungsleiters</returns>
         public override string GetInfo()
