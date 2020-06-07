@@ -30,13 +30,13 @@ namespace EmployeeGendered
         /// <returns>Info des Angestellten</returns>
         public override string GetInfo()
         {
-            string genderedJob = "Angestellte";
+            string genderedJob = " und bin Angestellte";
             if (base.Gender == 0)
             {
-                genderedJob = "Angestellter";
+                genderedJob = " und bin Angestellter";
             }
 
-            return $"Ich heiße {base.Name} und arbeite in der Abteilung {base.Department} und bin {genderedJob}";
+            return base.GetInfo() + genderedJob;
         }
 
         /// <summary>

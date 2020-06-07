@@ -7,8 +7,8 @@ namespace EmployeeGendered
     /// </summary>
     public class Worker : Employee
     {
-        double _hours;           // Spezielle Daten des Arbeiters
-        double _hourlyWage;      // Stundenlohn
+        private double _hours;           // Spezielle Daten des Arbeiters
+        private double _hourlyWage;      // Stundenlohn
 
         /// <summary>
         /// Überladener Konstruktor
@@ -21,7 +21,6 @@ namespace EmployeeGendered
         public Worker(string name, Gender gender, string department)
             : base(name, gender, department)
         {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -35,7 +34,8 @@ namespace EmployeeGendered
         public Worker(string name, Gender gender, string department, double hours, double hourlyWage)
             : this(name, gender, department)
         {
-            throw new NotImplementedException();
+            _hours = hours;
+            _hourlyWage = hourlyWage;
         }
 
         /// <summary>
@@ -44,18 +44,24 @@ namespace EmployeeGendered
         /// <returns>Info des Arbeiter</returns>
         public override string GetInfo()
         {
-            throw new NotImplementedException();
+            string genderedJob = " und bin Arbeiterin";
+            if (base.Gender == 0)
+            {
+                genderedJob = " und bin Arbeiter";
+            }
+
+            return base.GetInfo() + genderedJob;
         }
 
         public double HourlyWage
         {
             get
             {
-                throw new NotImplementedException();
+                return _hourlyWage;
             }
-            set 
+            set
             {
-                throw new NotImplementedException();
+                _hourlyWage = value;
             }
         }
 
@@ -67,11 +73,11 @@ namespace EmployeeGendered
         {
             get
             {
-                throw new NotImplementedException();
+                return _hours;
             }
             set
             {
-                throw new NotImplementedException();
+                _hours = value;
             }
         }
 
