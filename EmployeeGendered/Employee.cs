@@ -1,7 +1,7 @@
 ﻿/*--------------------------------------------------------------
- *				HTBLA-Leonding / Class:
+ *				HTBLA-Leonding / Class: 4ABIF 2019/2020
  *--------------------------------------------------------------
- *              Name
+ *              Name: Christian Schadler
  *--------------------------------------------------------------
  * Description:
  *
@@ -36,7 +36,17 @@ namespace EmployeeGendered
         /// <param name="department"></param>
         public Employee(string name, Gender gender, string department)
         {
-            throw new NotImplementedException();
+            if (name[0] >= 'A' && name[0] <= 'Z' && name.Length >= 2)
+            {
+                _name = name;
+            }
+            else
+            {
+                _name = "ERROR";
+            }
+
+            _gender = gender;
+            _department = department;
         }
 
         /// <summary>
@@ -45,7 +55,7 @@ namespace EmployeeGendered
         /// <returns></returns>
         public virtual string GetInfo()
         {
-            throw new NotImplementedException();
+            return $"Ich heiße {_name} und arbeite in der Abteilung{_department}";
         }
 
         /// <summary>
@@ -58,13 +68,22 @@ namespace EmployeeGendered
 
         public string Department
         {
-            get { throw new NotImplementedException(); }
-            private set { throw new NotImplementedException(); }
+            get
+            {
+                return _department;
+            }
+            private set
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public string Name
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return _name;
+            }
             private set
             {
                 throw new NotImplementedException();
@@ -75,7 +94,7 @@ namespace EmployeeGendered
         {
             get
             {
-                throw new NotImplementedException();
+                return _gender;
             }
             private set
             {

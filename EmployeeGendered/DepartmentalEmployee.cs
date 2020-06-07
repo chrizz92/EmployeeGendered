@@ -8,7 +8,7 @@ namespace EmployeeGendered
     /// </summary>
     public class DepartmentalEmployee : Employee
     {
-        double _monthlyWage;
+        private double _monthlyWage;
 
         /// <summary>
         /// Konstruktor des Abteilungsmitarbeiter
@@ -21,7 +21,7 @@ namespace EmployeeGendered
         public DepartmentalEmployee(string name, Gender gender, string department, double monthlyWage)
             : base(name, gender, department)
         {
-            throw new NotImplementedException();
+            _monthlyWage = monthlyWage;
         }
 
         /// <summary>
@@ -30,7 +30,13 @@ namespace EmployeeGendered
         /// <returns>Info des Angestellten</returns>
         public override string GetInfo()
         {
-            throw new NotImplementedException();
+            string genderedJob = "Angestellte";
+            if (base.Gender == 0)
+            {
+                genderedJob = "Angestellter";
+            }
+
+            return $"Ich heiße {base.Name} und arbeite in der Abteilung {base.Department} und bin {genderedJob}";
         }
 
         /// <summary>
@@ -40,7 +46,7 @@ namespace EmployeeGendered
         /// <returns></returns>
         public override double GetSalary()
         {
-            throw new NotImplementedException();
+            return _monthlyWage;
         }
     }
 }

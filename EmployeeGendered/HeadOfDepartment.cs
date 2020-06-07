@@ -8,9 +8,8 @@ namespace EmployeeGendered
     /// </summary>
     public class HeadOfDepartment : DepartmentalEmployee
     {
-
         /// <summary>
-        /// Konstruktor des Abteilungsleiters verwendet den Konstruktor des 
+        /// Konstruktor des Abteilungsleiters verwendet den Konstruktor des
         /// Abteilungsmitarbeiters.
         /// Spezielles bleibt nichts übrig
         /// </summary>
@@ -20,7 +19,6 @@ namespace EmployeeGendered
         public HeadOfDepartment(string name, Gender gender, string department, double monthlyWage)
             : base(name, gender, department, monthlyWage)
         {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -30,7 +28,7 @@ namespace EmployeeGendered
         /// <returns>Info des Abteilungsleiters</returns>
         public override string GetInfo()
         {
-            throw new NotImplementedException();
+            return $"Ich heiße {base.Name} und leite die Abteilung {base.Department}";
         }
 
         /// <summary>
@@ -40,7 +38,7 @@ namespace EmployeeGendered
         /// <returns></returns>
         public override double GetSalary()
         {
-            throw new NotImplementedException();
+            return base.GetSalary() * 1.2;
         }
     }
 }
